@@ -111,7 +111,6 @@
           quizService.editQuiz(vm.quiz);
         }
         $rootScope.message = "Quiz successfully saved.";
-        $rootScope.$broadcast("RefreshQuizList");
         $location.path("/");
       }
     }

@@ -31,14 +31,6 @@
       vm.quizzes = quizService.getQuizzes();
     }
 
-    var unregisterRefreshQuizList = $rootScope.$on("RefreshQuizList", function() {
-      refreshQuizzes();
-    });
-    
-    $scope.$on("$destroy", function() {
-      unregisterRefreshQuizList();
-    })
-
     $scope.$on("$destroy", function() {
       $rootScope.message = "";
     });
