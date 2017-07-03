@@ -1,0 +1,22 @@
+<p ng-if="vm.message" class="success-box">{{ vm.message }}</p>
+<div class="heading">Welcome to QuizMe!</div>
+<p>This site lets you create multiple-choice quizzes, and take them.</p>
+<p>To get started, please click on "New Quiz" to create a quiz, or click on an existing quiz in your list to take it.</p>
+
+<div class="heading2"><strong>Saved quizzes</strong></div>
+<div ng-repeat="quiz in vm.quizzes" class="quiz-list-item">
+  <a title="Take this quiz" class="quiz-list-name" href="{{ '#!/take/' + quiz.id }}">{{ quiz.name }}</a>
+  <div class="pull-right">
+    <button title="Edit this quiz" class="btn btn-sm btn-primary" ng-click="vm.editQuiz(quiz)">
+      <span class="glyphicon glyphicon-edit"></span>
+    </button>
+    <button title="Delete this quiz" class="btn btn-sm btn-danger" ng-click="vm.deleteQuiz(quiz)">
+      <span class="glyphicon glyphicon-trash"></span>
+    </button>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div ng-if="vm.quizzes.length === 0">
+  <em>No quizzes saved</em>
+</div>
+<button style="margin-top:10px" ng-click="vm.newQuiz()">New Quiz</button>

@@ -1,0 +1,14 @@
+<div class="heading">{{ vm.quiz.name }}</div>
+<hr/>
+<p class="heading2 bold" style="margin-bottom: 20px">Question {{ vm.currentQuestionIndex + 1 }} of {{ vm.quiz.questions.length }}</p>
+<p class="bold">{{ vm.question.text }}</p>
+<div ng-repeat="answer in vm.question.answers">
+  <input type="radio" id="answer{{$index}}" name="answer" ng-value="$index" ng-model="vm.question.chosenAnswer">
+  <label for="answer{{$index}}"><b>{{ $index | numToLetter }}.&nbsp;</b>{{ answer.text }}</label>
+</div>
+
+<div style="margin-top: 50px">
+  <button class="btn" ng-disabled="vm.currentQuestionIndex === 0" ng-click="vm.previousQuestion()">Previous Question</button>
+  <button class="btn" ng-disabled="vm.currentQuestionIndex === vm.quiz.questions.length - 1" ng-click="vm.nextQuestion()">Next Question</button>
+  <button class="btn" ng-disabled="vm.unansweredQuestions()" ng-click="vm.submit()">Submit</button>
+</div>

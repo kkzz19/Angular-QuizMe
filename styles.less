@@ -1,0 +1,149 @@
+@error-red: red;
+@success-green: green;
+
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+#header-content, #mainpage {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  width: 100%;
+  background-color: lightblue;
+}
+
+.pointer {
+  cursor: pointer;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+#header-img {
+  width: 90px; 
+  height: 90px;
+  display: inline-block;
+  padding: 10px;
+}
+
+#site-logo-text {
+  vertical-align: middle;
+  font-size: 50px;
+  font-family: "Georgia";
+  color: #4444BB;
+}
+
+.flex-container {
+  display: flex;
+  flex: 1 1;
+  width: 100%;
+  height: 100%;
+}
+
+#mainpage {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.error-color {
+  color: @error-red;
+}
+
+.success-color {
+  color: @success-green;
+}
+
+h2 {
+  margin: 5px 0px 5px 0px;
+  padding: 0px;
+}
+
+.heading {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.question {
+  border: 3px solid lightgray;
+  background-color: #EEEEFF;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 1000px;
+}
+
+.heading2 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.question-text {
+  width: 100%;
+}
+
+.answer {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.error-box {
+  border: 1px solid #FF4444;
+  padding: 5px;
+  background-color: #FFEEEE;
+  color: @error-red;
+  border-radius: 5px; 
+  display: inline-block;
+  font-weight: bold;
+}
+
+.success-box {
+  border: 1px solid #00CC00;
+  padding: 5px;
+  background-color: #DDFFDD;
+  color: green;
+  border-radius: 5px; 
+  display: inline-block;
+  font-weight: bold;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.quiz-list-item {
+  padding: 4px;
+  border: 1px solid lightgray;
+  width: 300px;
+  height: 40px;
+  margin-top: -1px;
+}
+
+.quiz-list-name {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  height: 32px;
+  line-height: 32px;
+}
+
+#score {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: normal !important;
+}
+
+input[type="radio"] + label {
+  vertical-align: middle;
+}

@@ -1,0 +1,22 @@
+<div class="heading">{{ vm.quiz.name }}</div>
+<div id="score">Score: <b>{{ vm.score }}</b></div>
+
+<div ng-repeat="question in vm.quiz.questions" class="question">
+  <div style="margin-bottom: 5px">
+    <span class="heading2">
+      <strong>Question {{ $index + 1 }}</strong>
+      <span ng-if="vm.isRight(question)" class="success-color glyphicon glyphicon-ok"></span>
+      <span ng-if="!vm.isRight(question)" class="error-color glyphicon glyphicon-remove"></span>
+    </span>
+  </div>
+  <div>{{ question.text }}</div>
+  <div ng-repeat="answer in question.answers" class="answer">
+    <div style="margin-left: 10px"><b>{{ $index | numToLetter }}.&nbsp;</b>{{ answer.text }}</div>
+  </div>
+  <div>Your answer: <b>{{ question.chosenAnswer | numToLetter }}</b></div>
+  <div>Correct answer: <b>{{ question.correctAnswerIndex | numToLetter }}</b></div>
+</div>
+
+<div>
+  <button class="btn" ng-click="vm.backToHome()">Back to homepage</button>
+</div>

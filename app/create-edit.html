@@ -1,0 +1,42 @@
+<div class="heading">{{ vm.header }}</div>
+
+<div style="margin-bottom: 10px">
+  <label>Quiz name:</label>
+  <input type="text" ng-model="vm.quiz.name">
+  <validation-error ng-if="vm.valQuizNameBlank" msg="Quiz name must not be blank"></validation-error>
+</div>
+
+<div ng-repeat="question in vm.quiz.questions" class="question">
+  <div style="margin-bottom: 5px">
+    <span class="heading2"><strong>Question {{ $index + 1 }}</strong></span>
+    <button ng-click="vm.removeQuestion($index)">Remove</button>
+  </div>
+  
+  <validation-error ng-if="question.valNoText" msg="Question must not be blank"></validation-error>
+  <textarea placeholder="Enter question here" ng-model="question.text" class="question-text" rows="2"></textarea>
+
+  <div class="heading2">Answers</div>
+  <validation-error ng-if="question.valNotEnoughAnswers" msg="Question must have at least two answers"></validation-error>
+  <div ng-repeat="answer in question.answers" class="answer">
+    <input type="text" placeholder="Enter answer here" size="40" name="Answer" ng-model="answer.text">
+    <input id="answer{{$index}}{{$parent.$index}}" type="radio" name="answer{{$parent.$index}}" ng-value="$index" ng-model="question.correctAnswerIndex">
+    <label for="answer{{$index}}{{$parent.$index}}">Correct?</label>
+    <button ng-click="vm.removeAnswer(question, $index)">Remove answer</button>
+    <validation-error ng-if="answer.valAnswerBlank" msg="Answer must not be blank"></validation-error>
+  </div>
+  <div style="margin-top:5px">
+    <button ng-click="vm.addAnswer(question)">Add Answer</button>
+  </div>
+</div>
+
+<div>
+  <button ng-click="vm.addQuestion()">Add Question</button>
+  <validation-error ng-if="vm.valQuizNoQuestions" msg="Quiz must have at least one question"></validation-error>
+<div>
+<br/>
+<div>
+  <button class="btn btn-success" ng-click="vm.saveQuiz()">Save Quiz</button>
+  <button class="btn" ng-click="vm.cancel()">Cancel</button>
+  <br/>
+  <div ng-if="vm.errorMsg" style="margin-top: 10px" class="error-box">{{ vm.errorMsg }}</div>
+</div>
