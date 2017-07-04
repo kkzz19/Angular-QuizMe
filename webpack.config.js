@@ -29,7 +29,7 @@ module.exports = {
   devtool: debug ? "inline-sourcemap" : false,
   entry: "./app/app.js",
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + "/docs",
     filename: fileName
   },
   plugins: plugins,
