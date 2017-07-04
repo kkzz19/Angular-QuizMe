@@ -9,11 +9,7 @@ var plugins = [
   new HtmlWebpackPlugin({
     template: __dirname + "/index.html",
     inject: "body"
-  }),
-  new CopyWebpackPlugin([{
-    from: "app/img",
-    to: "img"
-  }])
+  })
 ];
 
 var fileName = "[name].min.js";
@@ -30,7 +26,6 @@ module.exports = {
   entry: "./app/app.js",
   output: {
     path: __dirname + "/docs",
-    //publicPath: debug ? "" : "/Angular-QuizMe", //Production is for github pages
     filename: fileName
   },
   plugins: plugins,
