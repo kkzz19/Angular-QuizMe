@@ -7,7 +7,7 @@ var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 var plugins = [
   new HtmlWebpackPlugin({
-    template: __dirname + "/app/index.html",
+    template: __dirname + "/index.html",
     inject: "body"
   }),
   new CopyWebpackPlugin([{
@@ -30,7 +30,7 @@ module.exports = {
   entry: "./app/app.js",
   output: {
     path: __dirname + "/docs",
-    publicPath: "/",
+    //publicPath: debug ? "" : "/Angular-QuizMe", //Production is for github pages
     filename: fileName
   },
   plugins: plugins,
@@ -48,6 +48,10 @@ module.exports = {
       {
         test: /\.html/,
         loader: "html-loader"
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        loader: "file-loader?name=[path][name].[hash].[ext]"
       }
     ]
   }
