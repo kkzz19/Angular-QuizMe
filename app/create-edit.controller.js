@@ -53,7 +53,7 @@
         vm.quiz.questions = [];
       }
       vm.quiz.questions.push({
-        answers: [],
+        answers: [{}, {}],
         correctAnswerIndex: 0
       });
     }

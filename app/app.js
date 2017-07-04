@@ -7,7 +7,7 @@ var app = angular.module("quizme", [
   "ngRoute"
 ]);
 
-require("./../styles.less");
+require("./../styles/styles.less");
 require("./filters.js");
 require("./main.controller.js");
 require("./validationError.directive.js");

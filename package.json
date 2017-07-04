@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "set NODE_ENV=debug&&webpack-dev-server --inline --progress --port 3000",
-    "build": "set NODE_ENV=production&&rimraf -rf dist&&webpack --bail",
+    "build": "set NODE_ENV=production&&rimraf -rf docs&&webpack --bail",
     "test": "karma start"
   },
   "babel": {
