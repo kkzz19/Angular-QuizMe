@@ -7,7 +7,7 @@ var app = angular.module("quizme", [
   "ngRoute"
 ]);
 
-require("./../styles/styles.less");
+require("./styles/styles.less");
 require("./filters.js");
 require("./main.controller.js");
 require("./validationError.directive.js");
@@ -18,23 +18,23 @@ require("./results.controller.js");
 
 app.config(["$routeProvider", function($routeProvider) {
   $routeProvider.when("/", {
-    templateUrl: "app/main.html",
+    template: require("./main.html"),
     controller: "mainController as vm",
   }),
   $routeProvider.when("/create", {
-    templateUrl: "app/create-edit.html",
+    template: require("./create-edit.html"),
     controller: "createEditController as vm",
   }),
   $routeProvider.when("/edit/:quizId", {
-    templateUrl: "app/create-edit.html",
+    template: require("./create-edit.html"),
     controller: "createEditController as vm",
   }),
   $routeProvider.when("/take/:quizId", {
-    templateUrl: "app/take.html",
+    template: require("./take.html"),
     controller: "takeController as vm",
   }),
     $routeProvider.when("/results/", {
-    templateUrl: "app/results.html",
+    template: require("./results.html"),
     controller: "resultsController as vm",
   })
 }]);

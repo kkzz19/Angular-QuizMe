@@ -11,7 +11,7 @@ var plugins = [
     inject: "body"
   }),
   new CopyWebpackPlugin([{
-    from: "img",
+    from: "app/img",
     to: "img"
   }])
 ];
@@ -30,6 +30,7 @@ module.exports = {
   entry: "./app/app.js",
   output: {
     path: __dirname + "/docs",
+    publicPath: "/",
     filename: fileName
   },
   plugins: plugins,
@@ -44,6 +45,10 @@ module.exports = {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader"
       },
+      {
+        test: /\.html/,
+        loader: "html-loader"
+      }
     ]
   }
 };
