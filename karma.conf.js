@@ -32,6 +32,14 @@ module.exports = function(config) {
             test: /\.less$/,
             loader: "style-loader!css-loader!less-loader"
           },
+          {
+            test: /\.html/,
+            loader: "html-loader"
+          },
+          {
+            test: /\.(png|jpe?g|gif)$/,
+            loader: "file-loader?name=[path][name].[hash].[ext]"
+          }
         ]
       }
     },
