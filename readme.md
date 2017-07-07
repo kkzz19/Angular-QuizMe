@@ -1,7 +1,17 @@
-# Application Info
+# Application info
 
 * A sample AngularJS web application for creating and taking your own quizzes.
 * Currently all quizzes are saved to localStorage. A backend may be added soon.
+
+# Tools used
+* This project uses a lot of technologies to create a streamlined build ecosystem and code architecture. The following are included:
+    * NPM for package management
+    * Webpack for bundling
+    * AngularJS for the framework
+    * LESS for CSS preprocessor
+    * Babel for ES6 transpiling
+    * Jasmine/karma for testing
+    * A bunch of third party libraries, i.e. bootstrap, lodash, jquery, etc.
 
 # Running the application:
 
